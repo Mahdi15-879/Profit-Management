@@ -35,7 +35,7 @@ function App() {
       const buyPrice = parseFloat(item.buyPrice || 0);
       const sellPrice = parseFloat(item.sellPrice || 0);
 
-      acc[dateTime].allCounts += count;
+      acc[dateTime].allCounts += count * count;
       acc[dateTime].totalBuyPrice += buyPrice * count;
       acc[dateTime].totalSellPrice += sellPrice * count;
       acc[dateTime].profit =
