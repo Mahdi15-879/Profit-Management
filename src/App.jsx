@@ -111,10 +111,6 @@ function App() {
                     )}`}</p>
                     <p>{`تعداد: ${innerItem.count}`}</p>
                   </div>
-
-                  <figure>
-                    <img src={innerItem.img.at(0)} alt="product" />
-                  </figure>
                 </div>
               ))}
             </div>

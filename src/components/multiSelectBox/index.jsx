@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./multiSelectBox.css";
 import arrowIcon from "../../assets/Arrow-Bottom-Icon.svg";
 import checked from "../../assets/icon-checked-white.svg";
-import clothes from "../../assets/clothes.svg";
+// import clothes from "../../assets/clothes.svg";
 
 const MultiSelectBox = ({
   title,
@@ -62,13 +62,13 @@ const MultiSelectBox = ({
                 <span className="checkbox"></span>
               )}
               <div className="item_info">
-                <figure>
+                {/* <figure>
                   <img src={option.img ? option.img : clothes} alt="product" />
-                </figure>
+                </figure> */}
 
                 <div className="item_infos">
-                  <h6>{option.title}</h6>
-                  <p>{option.code}</p>
+                  <h6>{`نام محصول: ${option.title}`}</h6>
+                  <p>{`کد محصول: ${option.code}`}</p>
                 </div>
               </div>
             </li>

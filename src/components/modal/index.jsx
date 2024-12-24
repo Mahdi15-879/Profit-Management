@@ -4,11 +4,10 @@ import Backdrop from "../backdrop";
 import MultiSelectBox from "../multiSelectBox";
 import SelectProduct from "../selectProduct";
 
-import clothes from "../../assets/clothes.svg";
+// import clothes from "../../assets/clothes.svg";
 
 // eslint-disable-next-line react/prop-types
 const Modal = ({ show, onClose, kind, setSellProducts }) => {
-  const [baseCode, setBaseCode] = useState([clothes]);
   const [productName, setProductName] = useState("");
   const [productCode, setProductCode] = useState("");
   const [buyPrice, setBuyPrice] = useState("");
@@ -16,32 +15,8 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [buyProducts, setBuyProducts] = useState([]);
 
-  const fileChangeHandler = (event) => {
-    const files = event.target.files;
-    const file = files[0];
-
-    const maxSizeInBytes = 500 * 1024; // 500KB
-    if (file.size > maxSizeInBytes) {
-      alert(
-        "اندازه فایل بزرگ‌تر از ۵۰۰ کیلوبایت است! لطفاً فایل کوچک‌تری انتخاب کنید."
-      );
-      return;
-    }
-
-    getBase(file);
-  };
-
-  const getBase = (file) => {
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      setBaseCode([reader.result]);
-    };
-  };
-
   const handleAddProduct = () => {
     if (!productName || !productCode || !buyPrice) {
-      setBaseCode([clothes]);
       setProductName("");
       setProductCode("");
       setBuyPrice("");
@@ -50,7 +25,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
     }
 
     const newProduct = {
-      img: baseCode,
       productName,
       productCode,
       buyPrice,
@@ -62,7 +36,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
     localStorage.setItem("products", JSON.stringify(existingProducts));
 
-    setBaseCode([clothes]);
     setProductName("");
     setProductCode("");
     setBuyPrice("");
@@ -110,7 +83,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
         show={show}
         onClose={() => {
           onClose();
-          setBaseCode([clothes]);
           setProductName("");
           setProductCode("");
           setBuyPrice("");
@@ -132,7 +104,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
           <button
             onClick={() => {
               onClose();
-              setBaseCode([clothes]);
               setProductName("");
               setProductCode("");
               setSelectedOptions([]);
@@ -168,21 +139,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
           </div>
         ) : (
           <div className="Product">
-            <div className="image-container">
-              <figure>
-                <img src={baseCode} alt="product" />
-              </figure>
-              <label htmlFor="fileInput">
-                <p>افزودن تصویر</p>
-                <input
-                  id="fileInput"
-                  type="file"
-                  accept=".png, .jpg, .jpeg"
-                  onChange={fileChangeHandler}
-                />
-              </label>
-            </div>
-
             <div className="inputs">
               <label htmlFor="productName">نام محصول:</label>
               <input

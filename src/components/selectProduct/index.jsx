@@ -46,7 +46,6 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
           productName: selectedProduct.title,
           productCode: selectedProduct.code,
           buyPrice: selectedProduct.buyPrice,
-          img: selectedProduct.img,
           sellPrice,
           count,
           currentDateTime,
@@ -60,10 +59,6 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
   return (
     <div className="select_products">
       <div className="selected_product_info">
-        <figure>
-          <img src={selectedProduct.img} alt="product" />
-        </figure>
-
         <div className="product_infos">
           <p>{`نام محصول: ${selectedProduct.title}`}</p>
           <p>{`کد محصول: ${selectedProduct.code}`}</p>
