@@ -12,13 +12,6 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  const handleBuyPriceChange = (e) => {
-    const value = e.target.value.replace(/,/g, "");
-    if (!isNaN(value)) {
-      setSellPrice(value);
-    }
-  };
-
   const getTehranDateTime = () => {
     const options = {
       timeZone: "Asia/Tehran",
@@ -81,10 +74,10 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
       <div className="inputs">
         <label htmlFor="buyPrice">قیمت فروش:</label>
         <input
-          type="text"
+          type="number"
           id="buyPrice"
-          value={formattedNumber(sellPrice)}
-          onChange={handleBuyPriceChange}
+          value={sellPrice}
+          onChange={(e) => setSellPrice(e.target.value)}
         />
       </div>
 

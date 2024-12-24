@@ -19,6 +19,15 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
   const fileChangeHandler = (event) => {
     const files = event.target.files;
     const file = files[0];
+
+    const maxSizeInBytes = 5 * 1024 * 1024;
+    if (file.size > maxSizeInBytes) {
+      alert(
+        "اندازه فایل بزرگ‌تر از ۵ مگابایت است! لطفاً فایل کوچک‌تری انتخاب کنید."
+      );
+      return;
+    }
+
     getBase(file);
   };
 
@@ -28,18 +37,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
     reader.onload = () => {
       setBaseCode([reader.result]);
     };
-  };
-
-  const formattedNumber = (number) => {
-    if (!number) return "";
-    return new Intl.NumberFormat("en-US").format(number);
-  };
-
-  const handleBuyPriceChange = (e) => {
-    const value = e.target.value.replace(/,/g, "");
-    if (!isNaN(value)) {
-      setBuyPrice(value);
-    }
   };
 
   const handleAddProduct = () => {
@@ -165,13 +162,9 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
               ))}
             </div>
 
-            <div
-              className="add_product"
-              // onClick={handleAddBuyProducts}
-              onTouchStart={handleAddBuyProducts}
-            >
+            <button className="add_product" onClick={handleAddBuyProducts}>
               افزودن
-            </div>
+            </button>
           </div>
         ) : (
           <div className="Product">
@@ -213,20 +206,16 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
             <div className="inputs">
               <label htmlFor="buyPrice">قیمت خرید:</label>
               <input
-                type="text"
+                type="number"
                 id="buyPrice"
-                value={formattedNumber(buyPrice)}
-                onChange={handleBuyPriceChange}
+                value={buyPrice}
+                onChange={(e) => setBuyPrice(e.target.value)}
               />
             </div>
 
-            <div
-              className="add_product"
-              // onClick={handleAddProduct}
-              onTouchStart={handleAddProduct}
-            >
+            <button className="add_product" onClick={handleAddProduct}>
               افزودن
-            </div>
+            </button>
           </div>
         )}
       </div>
