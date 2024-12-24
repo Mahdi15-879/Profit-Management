@@ -20,10 +20,10 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
     const files = event.target.files;
     const file = files[0];
 
-    const maxSizeInBytes = 1 * 1024 * 1024;
+    const maxSizeInBytes = 500 * 1024; // 500KB
     if (file.size > maxSizeInBytes) {
       alert(
-        "اندازه فایل بزرگ‌تر از ۱ مگابایت است! لطفاً فایل کوچک‌تری انتخاب کنید."
+        "اندازه فایل بزرگ‌تر از ۵۰۰ کیلوبایت است! لطفاً فایل کوچک‌تری انتخاب کنید."
       );
       return;
     }
