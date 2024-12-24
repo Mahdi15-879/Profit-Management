@@ -62,7 +62,7 @@ function App() {
   return (
     <>
       <Header setCartModal={setCartModal} setProductModal={setProductModal} />
-      <p style={{ color: "#000" }}>hello</p>
+
       <Modal
         show={cartModal || productModal}
         onClose={closeModalHandler}

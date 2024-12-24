@@ -144,7 +144,7 @@
       width: 100%;
       font-weight: 500;
       font-family: IRANSansXFaNum, sans-serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       border-radius: 8px;
       padding: 0.5rem;
       color: #fff;
@@ -152,7 +152,8 @@
       border: 2px solid #f78606;
       margin-top: 1.5rem;
       cursor: pointer;
-      z-index: 1000;
+      box-sizing: border-box;
+      text-align: center;
     }
   }
 }
