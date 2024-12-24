@@ -165,7 +165,11 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
               ))}
             </div>
 
-            <button className="add_product" onClick={handleAddBuyProducts}>
+            <button
+              className="add_product"
+              onClick={handleAddBuyProducts}
+              onTouchStart={handleAddProduct}
+            >
               افزودن
             </button>
           </div>
@@ -216,7 +220,11 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
               />
             </div>
 
-            <button className="add_product" onClick={handleAddProduct}>
+            <button
+              className="add_product"
+              onClick={handleAddProduct}
+              onTouchStart={handleAddProduct}
+            >
               افزودن
             </button>
           </div>
