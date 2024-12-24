@@ -1,0 +1,22 @@
+.Header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: #eeeeee3d;
+  border-radius: 8px;
+  border: 2px solid #e0e0e0;
+}
+
+.Header button {
+  width: 100%;
+  font-weight: 600;
+  font-family: IRANSansXFaNum, sans-serif;
+  border-radius: 8px;
+  padding: 0.5rem;
+  border: 2px solid #e0e0e0;
+  background-color: #fff;
+  cursor: pointer;
+  color: #000;
+  font-size: 1rem;
+}

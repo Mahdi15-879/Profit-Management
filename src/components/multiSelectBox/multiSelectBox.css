@@ -1,0 +1,159 @@
+.multi_select {
+  width: 100%;
+  position: relative;
+  margin-top: 2rem;
+
+  .select_btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 1px 10px 0px #eeeeee, 0 0 0px 1px rgba(0, 0, 0, 0.09);
+
+    .btn_text {
+      color: #757575;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    figure {
+      margin: 0;
+      transition: 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .select_btn.open {
+    figure {
+      transform: rotate(180deg);
+    }
+  }
+
+  .list_items,
+  .empty_list_items {
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    border-radius: 0.4rem;
+    margin-top: 0.3rem;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 1px 10px 0px #eeeeee, 0 0 0px 1px rgba(0, 0, 0, 0.09);
+    overflow: hidden;
+    padding: 0;
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      cursor: pointer;
+      padding: 0.7rem 1rem;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #f4f5f7;
+      }
+
+      .check_icon {
+        border: none;
+        background-color: #f78606;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3px;
+        border-radius: 3px;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid #e7e7e7;
+
+        figure {
+          width: 8px;
+          height: 8px;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .checkbox {
+        border: 1px solid #e7e7e7;
+        border-radius: 3px;
+        width: 14px;
+        height: 14px;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .item_info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+
+        .item_infos {
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          gap: 0.5rem;
+
+          h6 {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #000;
+            font-weight: 400;
+            font-family: IRANSansXFaNum, sans-serif;
+            margin: 0;
+          }
+
+          p {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #000;
+            font-weight: 400;
+            font-family: IRANSansXFaNum, sans-serif;
+            margin: 0;
+          }
+        }
+
+        figure {
+          width: 55px;
+          height: 55px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin: 0;
+          border: 1.5px solid #f78606;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .empty_list_items .item {
+    justify-content: flex-end;
+  }
+
+  .select_btn.open ~ .list_items,
+  .select_btn.open ~ .empty_list_items {
+    display: block;
+  }
+}

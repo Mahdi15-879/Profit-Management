@@ -1,0 +1,84 @@
+.select_products {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: 2px solid #e0e0e0;
+  background-color: #eceaea69;
+  padding: 0.5rem;
+  border-radius: 8px;
+  box-sizing: border-box;
+
+  .selected_product_info {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+
+    figure {
+      min-width: 120px;
+      max-width: 120px;
+      min-height: 120px;
+      max-height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+      border: 2px solid #e0e0e0;
+      margin: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .product_infos {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.3rem;
+
+      p {
+        color: #000;
+        font-weight: 500;
+        font-family: IRANSansXFaNum, sans-serif;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.3rem;
+
+    label {
+      font-weight: 500;
+      font-family: IRANSansXFaNum, sans-serif;
+      font-size: 0.9rem;
+      color: #000;
+    }
+
+    input {
+      width: 94%;
+      border: 2px solid #e0e0e0;
+      background-color: #fff;
+      border-radius: 8px;
+      color: #000;
+      padding: 0.5rem;
+      font-weight: 400;
+      font-family: IRANSansXFaNum, sans-serif;
+      font-size: 0.9rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}

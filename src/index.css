@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Black.ttf")
+    format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-DemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Bold.ttf")
+    format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Medium.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Light.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-Thin.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANSansXFaNum";
+  src: url("./assets/fonts/Farsi numerals/IRANSansXFaNum-UltraLight.ttf")
+    format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+:root {
+  font-family: IRANSansXFaNum, sans-serif;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing: border-box;
+  direction: rtl;
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+}

@@ -1,0 +1,157 @@
+.Modal {
+  position: fixed;
+  z-index: 999;
+  width: 94%;
+  /* max-height: 90%;
+  min-height: 90%; */
+  border: 2px solid #e0e0e0;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 8px;
+  left: 3%;
+  top: 5%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out !important;
+  overflow: auto;
+
+  .Modal_Header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      color: #000;
+      font-weight: 500;
+      font-family: IRANSansXFaNum, sans-serif;
+      margin: 0;
+    }
+
+    button {
+      color: #000;
+      font-weight: 500;
+      font-family: IRANSansXFaNum, sans-serif;
+      font-size: 0.9rem;
+      padding: 0.2rem 1rem;
+      cursor: pointer;
+      border: 2px solid #e0e0e0;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+  }
+
+  .Product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+
+    .products {
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .image-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 2rem;
+
+      figure,
+      label figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+      }
+
+      figure {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        border: 2px solid #e0e0e0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      label {
+        cursor: pointer;
+        margin: 0;
+
+        p {
+          color: #000;
+          font-weight: 500;
+          font-family: IRANSansXFaNum, sans-serif;
+          font-size: 0.9rem;
+          padding: 0.2rem 1rem;
+          cursor: pointer;
+          border: 2px solid #e0e0e0;
+          background-color: #fff;
+          border-radius: 8px;
+        }
+      }
+
+      #fileInput {
+        display: none;
+      }
+    }
+
+    .inputs {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 0.3rem;
+
+      label {
+        font-weight: 500;
+        font-family: IRANSansXFaNum, sans-serif;
+        font-size: 0.9rem;
+        color: #000;
+      }
+
+      input {
+        width: 94%;
+        border: 2px solid #e0e0e0;
+        background-color: #fff;
+        border-radius: 8px;
+        color: #000;
+        padding: 0.5rem;
+        font-weight: 400;
+        font-family: IRANSansXFaNum, sans-serif;
+        font-size: 0.9rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .add_product {
+      width: 100%;
+      font-weight: 500;
+      font-family: IRANSansXFaNum, sans-serif;
+      font-size: 0.9rem;
+      border-radius: 8px;
+      padding: 0.5rem;
+      color: #fff;
+      background-color: #f78606;
+      border: 2px solid #f78606;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+  }
+}
