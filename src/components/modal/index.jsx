@@ -167,8 +167,8 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
             <button
               className="add_product"
-              onClick={handleAddBuyProducts}
-              onTouchEnd={handleAddBuyProducts}
+              // onClick={handleAddBuyProducts}
+              onTouchStart={handleAddBuyProducts}
             >
               افزودن
             </button>
@@ -222,8 +222,8 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
             <button
               className="add_product"
-              onClick={handleAddProduct}
-              onTouchEnd={handleAddProduct}
+              // onClick={handleAddProduct}
+              onTouchStart={handleAddProduct}
             >
               افزودن
             </button>
