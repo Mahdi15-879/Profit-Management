@@ -152,6 +152,7 @@
       border: 2px solid #f78606;
       margin-top: 1.5rem;
       cursor: pointer;
+      z-index: 1000;
     }
   }
 }
