@@ -107,6 +107,23 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
     );
   }, [productName]);
 
+  useEffect(() => {
+    const modalElement = document.querySelector(".Modal");
+    if (modalElement) {
+      const handleClick = (e) => {
+        if (e.target.matches(".add_product")) {
+          handleAddProduct();
+        }
+      };
+
+      modalElement.addEventListener("click", handleClick);
+
+      return () => {
+        modalElement.removeEventListener("click", handleClick);
+      };
+    }
+  }, []);
+
   return (
     <>
       <Backdrop
@@ -167,8 +184,8 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
             <button
               className="add_product"
-              onClick={handleAddBuyProducts}
-              onTouchStart={handleAddProduct}
+              // onClick={handleAddBuyProducts}
+              // onTouchStart={handleAddProduct}
             >
               افزودن
             </button>
@@ -222,8 +239,8 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
             <button
               className="add_product"
-              onClick={handleAddProduct}
-              onTouchStart={handleAddProduct}
+              // onClick={handleAddProduct}
+              // onTouchStart={handleAddProduct}
             >
               افزودن
             </button>
