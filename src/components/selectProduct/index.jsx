@@ -33,18 +33,18 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
   useEffect(() => {
     setBuyProducts((prev) => {
       const updatedProducts = prev.map((product) =>
-        product.productCode === selectedProduct.code
+        product.productCode === selectedProduct.productCode
           ? { ...product, sellPrice, count }
           : product
       );
 
       const productExists = updatedProducts.some(
-        (product) => product.productCode === selectedProduct.code
+        (product) => product.productCode === selectedProduct.productCode
       );
       if (!productExists) {
         updatedProducts.push({
-          productName: selectedProduct.title,
-          productCode: selectedProduct.code,
+          productName: selectedProduct.productName,
+          productCode: selectedProduct.productCode,
           buyPrice: selectedProduct.buyPrice,
           sellPrice,
           count,
@@ -60,8 +60,8 @@ const SelectProduct = ({ selectedProduct, setBuyProducts }) => {
     <div className="select_products">
       <div className="selected_product_info">
         <div className="product_infos">
-          <p>{`نام محصول: ${selectedProduct.title}`}</p>
-          <p>{`کد محصول: ${selectedProduct.code}`}</p>
+          <p>{`نام محصول: ${selectedProduct.productName}`}</p>
+          <p>{`کد محصول: ${selectedProduct.productCode}`}</p>
           <p>{`قیمت خرید: ${formattedNumber(selectedProduct.buyPrice)}`}</p>
         </div>
       </div>

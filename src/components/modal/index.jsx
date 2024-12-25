@@ -73,7 +73,6 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
   useEffect(() => {
     const products = JSON.parse(localStorage.getItem("products")) || [];
-    console.log("products: ", products);
     setOptions(
       products.map((product) => ({
         productCode: product.productCode,
