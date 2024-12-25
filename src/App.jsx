@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/header";
 import Modal from "./components/modal";
+import trash from "./assets/trash.svg";
 
 function App() {
   const [productModal, setProductModal] = useState(false);
@@ -54,13 +55,13 @@ function App() {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
-  function removeProduct(product) {
+  const removeProduct = (product) => {
     setSellProducts((prevProducts) => {
       const updatedProducts = prevProducts.filter((item) => item !== product);
       localStorage.setItem("buyProducts", JSON.stringify(updatedProducts));
       return updatedProducts;
     });
-  }
+  };
 
   useEffect(() => {
     const result = processProductData(sellProducts);
@@ -120,12 +121,12 @@ function App() {
                     <p>{`تعداد: ${innerItem.count}`}</p>
                   </div>
 
-                  <button
+                  <figure
                     className="delete_btn"
                     onClick={() => removeProduct(innerItem)}
                   >
-                    حذف
-                  </button>
+                    <img src={trash} alt="trash" />
+                  </figure>
                 </div>
               ))}
             </div>

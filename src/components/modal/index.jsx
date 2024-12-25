@@ -4,8 +4,6 @@ import Backdrop from "../backdrop";
 import MultiSelectBox from "../multiSelectBox";
 import SelectProduct from "../selectProduct";
 
-// import clothes from "../../assets/clothes.svg";
-
 // eslint-disable-next-line react/prop-types
 const Modal = ({ show, onClose, kind, setSellProducts }) => {
   const [productName, setProductName] = useState("");
@@ -65,13 +63,21 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
     onClose();
   };
 
+  const removeProduct = (product) => {
+    setOptions((prevProducts) => {
+      const updatedProducts = prevProducts.filter((item) => item !== product);
+      localStorage.setItem("products", JSON.stringify(updatedProducts));
+      return updatedProducts;
+    });
+  };
+
   useEffect(() => {
     const products = JSON.parse(localStorage.getItem("products")) || [];
+    console.log("products: ", products);
     setOptions(
       products.map((product) => ({
-        code: product.productCode,
-        title: product.productName,
-        img: product.img,
+        productCode: product.productCode,
+        productName: product.productName,
         buyPrice: product.buyPrice,
       }))
     );
@@ -121,6 +127,7 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
               options={options}
               selectedOptions={selectedOptions}
               setSelectedOptions={setSelectedOptions}
+              removeProduct={removeProduct}
             />
 
             <div className="products">

@@ -3,13 +3,14 @@ import { useState } from "react";
 import "./multiSelectBox.css";
 import arrowIcon from "../../assets/Arrow-Bottom-Icon.svg";
 import checked from "../../assets/icon-checked-white.svg";
-// import clothes from "../../assets/clothes.svg";
+import trash from "../../assets/trash.svg";
 
 const MultiSelectBox = ({
   title,
   options,
   selectedOptions,
   setSelectedOptions,
+  removeProduct,
 }) => {
   const [itemsClicked, setItemsClicked] = useState(false);
 
@@ -49,7 +50,7 @@ const MultiSelectBox = ({
           {options.map((option) => (
             <li
               className="item"
-              key={option.code}
+              key={option.productCode}
               onClick={() => itemClickedHandler(option)}
             >
               {selectedOptions.includes(option) ? (
@@ -62,13 +63,12 @@ const MultiSelectBox = ({
                 <span className="checkbox"></span>
               )}
               <div className="item_info">
-                {/* <figure>
-                  <img src={option.img ? option.img : clothes} alt="product" />
-                </figure> */}
-
+                <figure onClick={() => removeProduct(option)}>
+                  <img src={trash} alt="trash" />
+                </figure>
                 <div className="item_infos">
-                  <h6>{`نام محصول: ${option.title}`}</h6>
-                  <p>{`کد محصول: ${option.code}`}</p>
+                  <h6>{`نام محصول: ${option.productName}`}</h6>
+                  <p>{`کد محصول: ${option.productCode}`}</p>
                 </div>
               </div>
             </li>
