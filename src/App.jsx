@@ -54,6 +54,14 @@ function App() {
     return new Intl.NumberFormat("en-US").format(number);
   };
 
+  function removeProduct(product) {
+    setSellProducts((prevProducts) => {
+      const updatedProducts = prevProducts.filter((item) => item !== product);
+      localStorage.setItem("buyProducts", JSON.stringify(updatedProducts));
+      return updatedProducts;
+    });
+  }
+
   useEffect(() => {
     const result = processProductData(sellProducts);
     setProductsList(result);
@@ -111,6 +119,13 @@ function App() {
                     )}`}</p>
                     <p>{`تعداد: ${innerItem.count}`}</p>
                   </div>
+
+                  <button
+                    className="delete_btn"
+                    onClick={() => removeProduct(innerItem)}
+                  >
+                    حذف
+                  </button>
                 </div>
               ))}
             </div>
