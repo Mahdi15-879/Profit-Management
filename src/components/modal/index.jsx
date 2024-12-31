@@ -30,6 +30,13 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
 
     const existingProducts = JSON.parse(localStorage.getItem("products")) || [];
 
+    if (
+      existingProducts?.some((product) => +product.productCode == +productCode)
+    ) {
+      alert("کد محصول وارد شده تکراری می‌باشد!");
+      return;
+    }
+
     existingProducts.push(newProduct);
 
     localStorage.setItem("products", JSON.stringify(existingProducts));
@@ -122,7 +129,7 @@ const Modal = ({ show, onClose, kind, setSellProducts }) => {
         {kind === "cart" ? (
           <div className="Product">
             <MultiSelectBox
-              title="محصولات"
+              title={`محصولات (${options?.length})`}
               options={options}
               selectedOptions={selectedOptions}
               setSelectedOptions={setSelectedOptions}
